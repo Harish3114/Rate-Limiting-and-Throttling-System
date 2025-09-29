@@ -1,0 +1,7 @@
+Step 1 : uvicorn main:app --reload --port 8000
+
+Step 2 : streamlit run dashboard_streamlit.py
+
+Step 3 : python simulate_requests.py
+
+Note : Run it in three different terminal
