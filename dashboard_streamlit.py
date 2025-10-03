@@ -6,14 +6,15 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 from streamlit_autorefresh import st_autorefresh
 import time
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv() 
 # Auto-refresh every 10 sec
 st_autorefresh(interval=10000, key="dashboard_counter")
 
 
-# Redis Cloud connection
-REDIS_URL = "redis://default:wE9YKudbNcC1sxnm8szcDfTioH5GTsrT@redis-12855.c90.us-east-1-3.ec2.redns.redis-cloud.com:12855"
+REDIS_URL = os.getenv("REDIS_URL")
 r = redis.Redis.from_url(REDIS_URL, decode_responses=True)
 
 
